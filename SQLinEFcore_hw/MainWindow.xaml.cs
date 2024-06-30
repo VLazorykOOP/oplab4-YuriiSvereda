@@ -150,7 +150,7 @@ namespace SQLinEFcore_hw
                 }
                 if (ProductDescription.Text != "")
                 {
-                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE Product SET Description = {ProductDescription.Text} WHERE Name = '{IdentityProductName.Text}'");
+                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE Product SET Description = '{ProductDescription.Text}' WHERE Name = '{IdentityProductName.Text}'");
                     IsAnyFieldToUpdate = true;
                 }
                 if (ProductCategory.Text != "")
@@ -211,7 +211,7 @@ namespace SQLinEFcore_hw
                 }
                 if (ProductName.Text != "")
                 {
-                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE Product SET Name = {ProductName.Text} WHERE Name = '{IdentityProductName.Text}'");
+                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE Product SET Name = '{ProductName.Text}' WHERE Name = '{IdentityProductName.Text}'");
                     IsAnyFieldToUpdate = true;
                 }
                 if (!IsAnyFieldToUpdate)
@@ -457,7 +457,7 @@ namespace SQLinEFcore_hw
 
                 if (UserName.Text != "")
                 {
-                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Name = {UserName.Text} WHERE Login = '{IdentityUserLogin.Text}'");
+                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Name = '{UserName.Text}' WHERE Login = '{IdentityUserLogin.Text}'");
                     IsAnyFieldToUpdate = true;
                 }
 
@@ -470,7 +470,7 @@ namespace SQLinEFcore_hw
                         if (passwordCheck.IsMatch(UserPassword.Text))
                         {
                             userPassword = UserPassword.Text;
-                            await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Password = {userPassword} WHERE Login = '{IdentityUserLogin.Text}'");
+                            await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Password = '{userPassword}' WHERE Login = '{IdentityUserLogin.Text}'");
                         }
                         else
                         {
@@ -488,7 +488,7 @@ namespace SQLinEFcore_hw
                         if (emailCheck.IsMatch(UserEmail.Text))
                         {
                             string userEmail = UserEmail.Text;
-                            await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Email = {userEmail} WHERE Login = '{IdentityUserLogin.Text}'");
+                            await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Email = '{userEmail}' WHERE Login = '{IdentityUserLogin.Text}'");
                         }
                         else
                         {
@@ -527,7 +527,7 @@ namespace SQLinEFcore_hw
 
                 if (UserLogin.Text != "")
                 {
-                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Login = {UserLogin.Text} WHERE Login = '{IdentityUserLogin.Text}'");
+                    await dbContext.Database.ExecuteSqlRawAsync($"UPDATE [User] SET Login = '{UserLogin.Text}' WHERE Login = '{IdentityUserLogin.Text}'");
                     IsAnyFieldToUpdate = true;
                 }
                 if (!IsAnyFieldToUpdate)
@@ -644,7 +644,7 @@ namespace SQLinEFcore_hw
             }
         }
 
-        private void ShowAvaliableBackups(object sender, RoutedEventArgs e)
+        private void ShowAvailableBackups(object sender, RoutedEventArgs e)
         {
             string directoryPath = @"E:\CyberByonicSystematics\Entity Framework Core\Homeworks\";
             string fileExtension = ".bak";
@@ -692,7 +692,7 @@ namespace SQLinEFcore_hw
             }
         }
 
-        private void IdentityUserlogin_GotFocus(object sender, RoutedEventArgs e)
+        private void IdentityUserLogin_GotFocus(object sender, RoutedEventArgs e)
         {
             if (IdentityUserLogin.FontSize == 11)
             {
@@ -702,7 +702,7 @@ namespace SQLinEFcore_hw
             }
         }
 
-        private void IdentityUserlogin_LostFocus(object sender, RoutedEventArgs e)
+        private void IdentityUserLogin_LostFocus(object sender, RoutedEventArgs e)
         {
             if (IdentityUserLogin.Text == "")
             {
@@ -710,6 +710,12 @@ namespace SQLinEFcore_hw
                 IdentityUserLogin.Foreground = Brushes.Gray;
                 IdentityUserLogin.FontSize = 11;
             }
+        }
+
+        private void DisplayShowWindow(object sender, RoutedEventArgs e)
+        {
+            var showWindow = new ShowWindow();
+            showWindow.Show();
         }
     }
 

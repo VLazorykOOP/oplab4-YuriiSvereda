@@ -88,7 +88,7 @@
             <RadioButton Name="UserDeleteRadio" Content="Delete" HorizontalAlignment="Left" Margin="0,5,0,0" Grid.Row="6" VerticalAlignment="Top" Height="15" Width="53" Grid.Column="1"/>
         </StackPanel>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Identity user's login:" VerticalAlignment="Top" Width="auto" Height="17" Grid.Row="8" Margin="0,0,0,0" Grid.Column="3"/>
-        <TextBox x:Name="IdentityUserLogin" Margin="0,18,0,0" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Grid.Column="3" Text="User to update or delete" FontSize="11" Foreground="Gray" GotFocus="IdentityUserlogin_GotFocus" LostFocus="IdentityUserlogin_LostFocus"/>
+        <TextBox x:Name="IdentityUserLogin" Margin="0,18,0,0" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Grid.Column="3" Text="User to update or delete" FontSize="11" Foreground="Gray" GotFocus="IdentityUserLogin_GotFocus" LostFocus="IdentityUserLogin_LostFocus"/>
 
         <Button Grid.Column="3" Content="Action" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Width="100" Height="28" Click="ActionWithUser"/>
 
@@ -111,8 +111,11 @@
 
         <TextBlock Grid.Column="7" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="Name backup:" VerticalAlignment="Top" Width="68" Height="17" Grid.Row="2" Grid.RowSpan="2"/>
         <TextBox x:Name="BackupRestoreName" Margin="0,17,38,0" Grid.Row="3" TextWrapping="Wrap" Grid.Column="7" Height="28" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Button Grid.Column="7" Content="Show backups" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Width="75" Height="28" Click="ShowAvaliableBackups" />
+        <Button Grid.Column="7" Content="Show backups" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Width="75" Height="28" Click="ShowAvailableBackups" />
         <Button Grid.Column="7" Content="Reset" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Width="75" Height="28" Click="RestoreDb" Grid.ColumnSpan="2" Margin="77,0,0,0" />
+        
+        
+        <Button Grid.Column="7" Content="View data from base" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="153" Height="45" FontSize="14" BorderBrush="#FF423981" Background="#FF423981" Foreground="White" Click="DisplayShowWindow"/>
 
     </Grid>
 </Window>
